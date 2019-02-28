@@ -1,2 +1,45 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% if logged_in? %>
+
+  <div class="user_show">
+    <img src="<%= current_user.img_url %>">
+  </div>
+  <div class="user_data">
+    <p><%= current_user.name %> @<%= current_user.twitter_ID %></p>
+    <p><%= current_user.description %></p>
+    <%= current_user.listed_count %>
+    <p>
+    ツイート:<%= current_user.tweet_count %>
+    </p>
+    <p>
+    フォロー:<%= current_user.followings_count %>
+    </p>
+    <p>
+    フォロワー:<%= current_user.followers_count %>
+    </p>
+    <p>
+    お気に入り:<%= current_user.favorites_count %>
+    </p>
+    <p>
+    <%= current_user.is_verified %>
+    </p>
+    <p>
+    <%= current_user.twitter_created_date %>
+    </p>
+    <p>
+    <%= current_user.hp %>
+    </p>
+    <p>
+    <%= current_user.atk %>
+    </p>
+    <p>
+    <%= current_user.def %>
+    </p>
+    <p>
+    <%= current_user.tp %>
+    </p>
+    <p>
+    <%= current_user.gold %>
+    </p>
+
+  </div>
+<% end %>
