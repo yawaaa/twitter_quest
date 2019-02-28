@@ -116,6 +116,7 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
+    pg (0.21.0)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.6)
@@ -218,6 +219,7 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.5)
   omniauth
   omniauth-twitter
+  pg (= 0.21.0)
   puma (~> 3.0)
   rails (~> 5.0.6)
   sass-rails (~> 5.0)
