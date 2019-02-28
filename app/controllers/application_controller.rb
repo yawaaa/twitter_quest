@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
-  # protect_from_forgery with: :exception
   
+  def index
+  end
+  
+  
+
   # before_action :set_twitter_client
 
   # def update
