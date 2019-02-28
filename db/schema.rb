@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190228064206) do
+ActiveRecord::Schema.define(version: 20190228072206) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
+    t.string   "uid"
     t.string   "twitter_ID"
+    t.string   "name"
     t.text     "img_url",              limit: 65535
     t.text     "description",          limit: 65535
     t.integer  "listed_count"

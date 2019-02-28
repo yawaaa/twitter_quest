@@ -55,3 +55,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "twitter"
 gem "dotenv-rails"
+
+gem "omniauth"
+gem "omniauth-twitter"
+
+group :production do
+  gem 'pg', '0.21.0'
+end

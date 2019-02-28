@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: twitter_quest_production
-  username: twitter_quest
-  password: <%= ENV['TWITTER_QUEST_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: twi-que_production
+  username: twi-que
+  password: <%= ENV['TWI-QUE_DATABASE_PASSWORD'] %>
