@@ -3,12 +3,10 @@
     <div class="cover-inner">
       <div class="cover-contents">
         <h1>Twitterアカウントと連動するバトルwebアプリ</h1>
-        <a href="" class="btn btn-success btn-lg">ツイクエを始める</a>
+          <% unless logged_in? %>
+            <%= link_to 'Twitterでログイン', '/auth/twitter', class: "btn btn-success btn-lg" %>
+          <% end %>
       </div>
     </div>
   </div>
 <% end %>
-
-<p>テスト</p>
-
-  

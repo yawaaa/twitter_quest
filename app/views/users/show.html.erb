@@ -1,44 +1,44 @@
 <% if logged_in? %>
 
   <div class="user_show">
-    <img src="<%= current_user.img_url %>">
+    <img src="<%= @user.img_url %>">
   </div>
   <div class="user_data">
-    <p><%= current_user.name %> @<%= current_user.twitter_ID %></p>
-    <p><%= current_user.description %></p>
-    <%= current_user.listed_count %>
+    <p><%= @user.name %> @<%= @user.twitter_ID %></p>
+    <p><%= @user.description %></p>
+    <%= @user.listed_count %>
     <p>
-    ツイート:<%= current_user.tweet_count %>
+    ツイート:<%= @user.tweet_count %>
     </p>
     <p>
-    フォロー:<%= current_user.followings_count %>
+    フォロー:<%= @user.followings_count %>
     </p>
     <p>
-    フォロワー:<%= current_user.followers_count %>
+    フォロワー:<%= @user.followers_count %>
     </p>
     <p>
-    お気に入り:<%= current_user.favorites_count %>
+    お気に入り:<%= @user.favorites_count %>
     </p>
     <p>
-    <%= current_user.is_verified %>
+    <%= @user.is_verified %>
     </p>
     <p>
-    <%= current_user.twitter_created_date %>
+    <%= @user.twitter_created_date %>
     </p>
     <p>
-    <%= current_user.hp %>
+    <%= @user.hp %>
     </p>
     <p>
-    <%= current_user.atk %>
+    <%= @user.atk %>
     </p>
     <p>
-    <%= current_user.def %>
+    <%= @user.def %>
     </p>
     <p>
-    <%= current_user.tp %>
+    <%= @user.tp %>
     </p>
     <p>
-    <%= current_user.gold %>
+    <%= @user.gold %>
     </p>
 
   </div>
