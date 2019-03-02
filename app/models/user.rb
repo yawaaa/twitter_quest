@@ -80,7 +80,8 @@ class User < ApplicationRecord
   
   
   
-  def self.ranking
-    self.group(:user_id).order("user_tp DESC").limit(10)
-  end
+  # def self.ranking
+  #   binding.pry
+  #   self.group(:user_id).order(":user_tp DESC").limit(10)
+  # end
 end
