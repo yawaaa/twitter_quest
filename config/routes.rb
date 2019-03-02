@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#create"
   get "/auth/twitter/callback", to: "sessions#create"
 
-  get "battles/"
 
 
   get "signup", to: "users#new"
