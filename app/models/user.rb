@@ -17,6 +17,16 @@ class User < ApplicationRecord
     user.is_verified          = auth[:extra][:raw_info][:verified]
     user.twitter_created_date = auth[:extra][:raw_info][:created_at]
      
+    fg_c = user.followings_count
+    fr_c = user.followers_count
+    tw_c = user.tweet_count
+    user.hp   = ((Math.log(fg_c+1,2) + Math.log(fr_c+1,2) + Math.log(tw_c+1,2) ) ** 3).round
+    user.atk  = ((Math.log(fg_c+1,2) + Math.log(tw_c+1,2)*2                    ) ** 3).round
+    user.def  = ((Math.log(fr_c+1,2) *3                                        ) ** 3).round
+    
+    
+    
+    
     end
   end
 
