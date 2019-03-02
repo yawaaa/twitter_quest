@@ -32,9 +32,9 @@
                 <li>
                   <%= link_to 'マイページ', user_path(current_user) %>
                 </li>
+                <li><%= render "users/reload_button", user: @user %></li>
                 <li role="separator" class="divider"></li>
                 <li>
-                  <li><%= render "users/reload_button", user: @user %></li>
                   <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
                 </li>
               </ul>

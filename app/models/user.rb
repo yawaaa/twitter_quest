@@ -20,5 +20,28 @@ class User < ApplicationRecord
     end
   end
 
+  def reload
+    # following数 ⇒ Fg 、follower数 ⇒ Fr 、 tweet数 = Twと て 
+    # HP  = ( log2(Fg+1)   + log2(Fr+1)   + log2(Tw+1) )^3
+    # ATK = ( log2(Fg+1)   + log2(Tw+1)*2              )^3
+    # DEF = ( log2(Fr+1)*3                             )^3 
+    puts self.hp, self.atk, self.def
+    
+    fg_c = self.followings_count
+    fr_c = self.followers_count
+    tw_c = self.tweet_count
+    
+    puts fg_c, fr_c, tw_c
+    
+    puts Math.log(fg_c+1,2)
+    puts (Math.log(fg_c+1,2)).round
+    
+    self.hp   = ((Math.log(fg_c+1,2) + Math.log(fr_c+1,2) + Math.log(tw_c+1,2) ) ** 3).round
+    self.atk  = ((Math.log(fg_c+1,2) + Math.log(tw_c+1,2)*2                    ) ** 3).round
+    self.def  = ((Math.log(fr_c+1,2) *3                                        ) ** 3).round
+    
+    self.save
+    
+  end
 
 end
