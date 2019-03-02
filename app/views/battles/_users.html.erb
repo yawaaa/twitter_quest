@@ -1,0 +1,44 @@
+ <!--% binding.pry %>-->
+<% if @users.present? %>
+<div class="battle_search">
+  <div class="row">
+    <% @users.each do |user| %>
+    　<% next if user.id == current_user.id %>   
+      <div class="user">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <img src="<%= user.img_url %>" alt="" >
+            </div>
+            <div class="panel-body">
+              <% if user.persisted? %>
+                <p class="user-title"><%= link_to user.name, user %></p>
+                <p class="user-hp">HP:<%= user.hp %></p>
+                <p class="user-atk">ATK:<%= user.attack %> / DEF:<%= user.defense %></p>
+              <% else %>
+                <p class="user-title"><%= user.name %></p>
+              <% end %>
+              <div class="buttons text-center">
+                <% if logged_in? %>
+                  <div class="buttons text-center">
+                    <%= render 'challenge_button', opponent: user %> <%# 渡すときの変数名: 情報元    %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+<% end %>

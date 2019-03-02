@@ -62,3 +62,36 @@ footer {
   color: #000;
 }
 
+ .media{
+    display: inline-block;
+}
+
+ .media-list .media .media-left{
+    display: inline-block;
+}
+ .media-list .media .media-body{
+    display: inline-block;
+}
+
+ .media-list .media .media-body img{
+    width:  75px;    /* ※縦横を同値に */
+    height: 75px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}
+
+.battle_search img{
+    width:  75px;    /* ※縦横を同値に */
+    height: 75px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}
+
+.ranking img{
+    width:  75px;    /* ※縦横を同値に */
+    height: 75px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}
+
+.ranking {
+   width: 100%;
+   display: inline-block;
+}

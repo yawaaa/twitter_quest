@@ -1,0 +1,17 @@
+<% view_battle = @user.battles.last %>
+
+<p>
+    バトル#<%= view_battle.id %>
+</p>
+
+<%= view_battle.winner %>
+<%= current_user.id %>
+<div >
+    
+<% if  view_battle.winner == current_user.id %>
+<% flash.now[:success] = 'バトルに勝利しました！！' %>
+<% end %> 
+
+
+つぶやきますか？    
+</div>

@@ -1,0 +1,27 @@
+<div class="ranking">
+  <h1>TPランキング</h1>
+  <% if @users.present? %>
+    <div class="row">
+      <% @users.each_with_index do |user, index| %>
+        <div class="user">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                #<%= index+1 %>: <%= user.tp %> TP
+                <img src="<%= user.img_url %>" alt="" >
+                <%= link_to user.name, user %>
+                <div class="buttons text-center">
+                  <% if logged_in? %>
+                    <!--%= render 'ownerships/want_button', user: user %>-->
+                  <% end %>
+                </div>
+              </div>
+              <div class="panel-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

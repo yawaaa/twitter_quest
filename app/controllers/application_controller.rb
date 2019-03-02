@@ -41,5 +41,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: "ログインしてください"
   end
   
+  def require_user_logged_in
+    unless logged_in?
+      redirect_to login_url
+    end
+  end
   
 end

@@ -1,0 +1,6 @@
+<%= form_for(current_user.battles.build) do |f| %>
+<!--% binding.pry %>-->
+  <%= hidden_field_tag :challenge_id, opponent.id %> <%# challenge_id として、opponent.idを渡す。   %>
+   <%= f.submit 'バトル！', class: 'btn btn-primary' %>
+ <% end %>
+ 

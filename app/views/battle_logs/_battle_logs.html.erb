@@ -1,0 +1,29 @@
+<% if battle_logs.any? %>
+  <ul class="media-list">
+    <% battle_logs.each do |battle_log| %>
+      <div class="media">
+        <div class="media-body"> 
+          <img src="<%= User.find(battle_log.user_id).img_url %>" class="inline">
+          →VS→
+          <img src="<%= User.find(battle_log.challenge_id).img_url %>"class="inline">
+        <!--</div>-->
+        <!--<div class="media-body">-->
+            <%= User.find(battle_log.user_id).name %>
+            VS
+            <%= User.find(battle_log.challenge_id).name %>
+            <%= battle_log.created_at %>
+            
+            <% if battle_log.winner != battle_log.user_id and battle_log.winner != battle_log.challenge_id %>
+            DRAW
+            <% elsif battle_log.winner == current_user.id %>
+            WIN
+            <% else %>
+            LOSE
+            <% end %>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+  <%= paginate battle_logs %>
+
+<% end %>

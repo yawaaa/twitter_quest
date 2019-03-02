@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190228072206) do
+ActiveRecord::Schema.define(version: 20190302081024) do
+
+  create_table "battles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "challenge_id"
+    t.integer  "winner"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["challenge_id"], name: "index_battles_on_challenge_id", using: :btree
+    t.index ["user_id"], name: "index_battles_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "uid"
@@ -26,12 +36,14 @@ ActiveRecord::Schema.define(version: 20190228072206) do
     t.boolean  "is_verified"
     t.datetime "twitter_created_date"
     t.integer  "hp"
-    t.integer  "atk"
-    t.integer  "def"
+    t.integer  "attack"
+    t.integer  "defense"
     t.integer  "tp"
     t.integer  "gold"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
 
+  add_foreign_key "battles", "users"
+  add_foreign_key "battles", "users", column: "challenge_id"
 end
