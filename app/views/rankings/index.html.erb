@@ -1,8 +1,8 @@
 <div class="ranking">
   <h1>TPランキング</h1>
-  <% if @users.present? %>
+  <% if @tp_ranking.present? %>
     <div class="row">
-      <% @users.each_with_index do |user, index| %>
+      <% @tp_ranking.each_with_index do |user, index| %>
         <div class="user">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="panel panel-default">

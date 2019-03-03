@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190302081024) do
+ActiveRecord::Schema.define(version: 20190303091741) do
 
   create_table "battles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -20,6 +20,26 @@ ActiveRecord::Schema.define(version: 20190302081024) do
     t.datetime "updated_at",   null: false
     t.index ["challenge_id"], name: "index_battles_on_challenge_id", using: :btree
     t.index ["user_id"], name: "index_battles_on_user_id", using: :btree
+  end
+
+  create_table "skill_learnings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_skill_learnings_on_skill_id", using: :btree
+    t.index ["user_id", "skill_id"], name: "index_skill_learnings_on_user_id_and_skill_id", unique: true, using: :btree
+    t.index ["user_id"], name: "index_skill_learnings_on_user_id", using: :btree
+  end
+
+  create_table "skills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "type_id"
+    t.string   "name"
+    t.float    "value",                   limit: 24
+    t.text     "effect_description",      limit: 65535
+    t.text     "requirement_description", limit: 65535
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,8 +62,13 @@ ActiveRecord::Schema.define(version: 20190302081024) do
     t.integer  "gold"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.integer  "wins_count"
+    t.integer  "losses_count"
+    t.integer  "battles_count"
   end
 
   add_foreign_key "battles", "users"
   add_foreign_key "battles", "users", column: "challenge_id"
+  add_foreign_key "skill_learnings", "skills"
+  add_foreign_key "skill_learnings", "users"
 end

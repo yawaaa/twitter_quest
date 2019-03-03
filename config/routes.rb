@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   # get "battles", to: "battles#show"
   # post "battles", to: "battles#create"
 
+  get "skills", to: "skills#index"
   get "battles/result", to:"battles#show"
   get "signup", to: "users#new"
   resources :users, only: [:show, :new, :create]
   resources :battles, only: [:create, :new]
+  resources :skill_learnings, only: [:create]
 
 end

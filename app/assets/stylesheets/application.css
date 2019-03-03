@@ -52,46 +52,50 @@ footer {
   letter-spacing: 0.15em;
 }
 
+/*ユーザー*/
 .user_show img{
     width:  200px;    /* ※縦横を同値に */
     height: 200px;       /* ※縦横を同値に */
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
 }
-
 .user_data{
   color: #000;
 }
 
- .media{
-    display: inline-block;
-}
 
- .media-list .media .media-left{
-    display: inline-block;
-}
+/*バトルサーチ*/
  .media-list .media .media-body{
     display: inline-block;
 }
-
- .media-list .media .media-body img{
-    width:  75px;    /* ※縦横を同値に */
-    height: 75px;       /* ※縦横を同値に */
-    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-}
-
 .battle_search img{
     width:  75px;    /* ※縦横を同値に */
     height: 75px;       /* ※縦横を同値に */
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
 }
 
+/*ランキング*/
 .ranking img{
     width:  75px;    /* ※縦横を同値に */
     height: 75px;       /* ※縦横を同値に */
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
 }
 
-.ranking {
+.tp_ranking {
    width: 100%;
    display: inline-block;
 }
+
+
+.battle_log img{
+    width:  75px;    /* ※縦横を同値に */
+    height: 75px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}
+
+/*バトル結果*/
+
+
+
+/*スキル*/
+
+

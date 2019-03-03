@@ -1,0 +1,28 @@
+<% if @skills.present? %>
+  <div class="battle_search">
+    <% @skills.each do |skill| %>
+      <div class="skill">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="panel panel-default">
+              <div class="panel-body">
+              <img src="/images/skill_icon/<%= skill.id %>.png" alt="skill">
+                <%= skill.name %>
+                <% case skill.type_id %>
+                <% when 1 %>
+                  攻撃
+                <% when 2 %>
+                　回復
+                <% end %>
+                <%= skill.effect_description %>
+                
+                <div class="buttons text-center">
+                  <%= render "skill_learnings/skill_learning_button", skill: skill %> <%# 渡すときの変数名: 情報元    %>
+                </div>
+                <p class="skill-requirement">解放条件:<%= skill.requirement_description %></p>
+              </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

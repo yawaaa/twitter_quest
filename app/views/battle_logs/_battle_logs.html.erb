@@ -1,4 +1,5 @@
 <% if battle_logs.any? %>
+<div class="battle_log" >
   <ul class="media-list">
     <% battle_logs.each do |battle_log| %>
       <div class="media">
@@ -25,5 +26,5 @@
     <% end %>
   </ul>
   <%= paginate battle_logs %>
-
+</div>
 <% end %>

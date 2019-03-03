@@ -6,7 +6,6 @@
   <div class="user_data">
     <p><%= @user.name %> @<%= @user.twitter_ID %></p>
     <p><%= @user.description %></p>
-    <%= @user.listed_count %>
     <p>
     ツイート:<%= @user.tweet_count %>
     </p>
@@ -20,19 +19,19 @@
     お気に入り:<%= @user.favorites_count %>
     </p>
     <p>
-    <%= @user.is_verified %>
+    認証？:<%= @user.is_verified %>
     </p>
     <p>
-    <%= @user.twitter_created_date %>
+    twitter開始日:<%= @user.twitter_created_date %>
     </p>
     <p>
-    <%= @user.hp %>
+    HP:<%= @user.hp %>
     </p>
     <p>
-    <%= @user.attack %>
+    ATK:<%= @user.attack %>
     </p>
     <p>
-    <%= @user.defense %>
+    DEF:<%= @user.defense %>
     </p>
     <p>
     TP:<%= @user.tp %>
@@ -40,6 +39,14 @@
     <p>
     Gold:<%= @user.gold %>
     </p>
-
+    wins_count: <%= @user.wins_count %>
+    losses_count: <%= @user.losses_count %>
+    battles_count:<%= @user.battles_count %>
   </div>
+  
+  
+<% if `@user.description` %>
+  <p>実績解除!!</p>
+<% end %>
+
 <% end %>

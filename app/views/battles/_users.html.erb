@@ -1,7 +1,6 @@
  <!--% binding.pry %>-->
 <% if @users.present? %>
-<div class="battle_search">
-  <div class="row">
+  <div class="battle_search">
     <% @users.each do |user| %>
     　<% next if user.id == current_user.id %>   
       <div class="user">
@@ -19,11 +18,7 @@
                 <p class="user-title"><%= user.name %></p>
               <% end %>
               <div class="buttons text-center">
-                <% if logged_in? %>
-                  <div class="buttons text-center">
-                    <%= render 'challenge_button', opponent: user %> <%# 渡すときの変数名: 情報元    %>
-                  </div>
-                <% end %>
+                <%= render 'challenge_button', opponent: user %> <%# 渡すときの変数名: 情報元    %>
               </div>
             </div>
           </div>
@@ -31,14 +26,4 @@
       </div>
     <% end %>
   </div>
-
-
-
-</div>
-
-
-
-
-
-
 <% end %>
